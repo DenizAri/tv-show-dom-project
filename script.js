@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /** @format */
 
 //You can edit ALL of the code here
@@ -128,63 +127,3 @@ function getEpisode(id) {
 }
 
 window.onload = setup;
-=======
-/** @format */
-
-//You can edit ALL of the code here
-function setup() {
-  const allEpisodes = getAllEpisodes();
-  makePageForEpisodes(allEpisodes);
-}
-
-function makePageForEpisodes(episodeList) {
-  const rootElem = document.getElementById("main");
-  let html = "<ul> ";
-  for (let i = 0; i < episodeList.length; i++) {
-    html += `
-  <li>
-  <h2>${episodeList[i].name}-${formatSeason(
-      episodeList[i].season,
-      episodeList[i].number
-    )}
-  </h2>
-  <img src=${episodeList[i].image.medium}>
-  <p> ${episodeList[i].summary}
-  </p>
-  </li>
- `;
-  }
-  html += "</ul>";
-
-  rootElem.innerHTML = html;
-  console.log(episodeList);
-}
-function formatSeason(season, episode) {
-  if (season < 10) {
-    season = "0" + season;
-  }
-  if (episode < 10) {
-    episode = "0" + episode;
-  }
-  return `S${season}E${episode}`;
-}
-
-let searchbox = document.getElementById("searchBox");
-searchbox.addEventListener("keyup", function (event) {
-  let searchinput = event.target.value.toLowerCase();
-  search(searchinput);
-});
-function search(searchinput) {
-  const allEpisodes = getAllEpisodes();
-  let filterArray = allEpisodes.filter(function (item) {
-    return (
-      item.name.toLowerCase().includes(searchinput) ||
-      item.summary.toLowerCase().includes(searchinput)
-    );
-  });
-
-  rootElem = "";
-  makePageForEpisodes(filterArray);
-}
-window.onload = setup;
->>>>>>> a5960ba96f4de7373affe9efccf73d5f707a6717
