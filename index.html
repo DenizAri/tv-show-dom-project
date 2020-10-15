@@ -7,15 +7,61 @@
     <link href="style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
-
   <body>
     <div id="root">
+      <div class="container">
+        <div class="header">
+          <header>
+            <nav>
+              <h1>Tv Shows</h1>
+              <ul>
+                <li>
+                  <input
+                    id="searchBox"
+                    type="text"
+                    placeholder="Live Search"
+                    title="Enter Episode name"
+                  />
+                </li>
+                <li><button id="clearBtn">Clear Search</button></li>
+                <li><button id="showAllBtn">Show All Episodes</button></li>
+                <li>
+                  <select name="show" id="showSelector" title="Choose Show">
+                    <option value="default">Select Show</option>
+                  </select>
+                </li>
+                <li>
+                  <form action="">
+                    <select
+                      name="episodes"
+                      id="episodes"
+                      title="Choose Episode"
+                      onchange="selectEpisode(this)"
+                    >
+                      <option value="S01E01">Select All</option>
+                    </select>
+                  </form>
+                </li>
+              </ul>
+              <p id="display"></p>
+            </nav>
+          </header>
+        </div>
+        <div id="main"></div>
+      </div>
     </div>
-
+    <footer>
+      <h5>
+        &copy;Copyright 2020. All data comes from<a
+          href="https://www.tvmaze.com/"
+          >TVMaze.com</a
+        >
+      </h5>
+    </footer>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="episodes.js"></script>
-
     <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>
+    <script src="shows.js"></script>
   </body>
 </html>
