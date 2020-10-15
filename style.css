@@ -3,13 +3,22 @@ body {
   background-color: #64c49c;
 }
 
+header {
+  background-color: rgb(236, 180, 75);
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: auto;
+}
 .refresh-holder {
   margin-left: 2rem;
 }
 .refresh-button {
   font-size: 1.2em;
   background-color: #ec1919;
-  margin-bottom: 1rergb (236, 43, 43);
+ 
 }
 
 .display-episodes {
